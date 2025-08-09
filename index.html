@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ea580c" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Wanderlust - AI Travel Planning Made Magical</title>
+    <meta name="description" content="Plan your perfect trip with AI-powered recommendations and beautiful, intuitive design.">
+    <meta name="keywords" content="travel planning, AI travel, trip planner, vacation planner, travel itinerary">
+    <meta name="author" content="Wanderlust AI">
+    <link rel="canonical" href="https://wanderlust-ai.com">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Wanderlust - AI Travel Planning Made Magical">
+    <meta property="og:description" content="Plan your perfect trip with AI-powered recommendations and beautiful, intuitive design.">
+    <meta property="og:image" content="/og-image.jpg">
+    <meta property="og:url" content="https://wanderlust-ai.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wanderlust AI">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wanderlust - AI Travel Planning Made Magical">
+    <meta name="twitter:description" content="Plan your perfect trip with AI-powered recommendations and beautiful, intuitive design.">
+    <meta name="twitter:image" content="/og-image.jpg">
+    <meta name="twitter:site" content="@WanderlustAI">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Wanderlust AI",
+      "description": "AI-powered travel planning application",
+      "url": "https://wanderlust-ai.com",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Wanderlust AI"
+      }
+    }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="//api.openweathermap.org">
+    <link rel="dns-prefetch" href="//api.mapbox.com">
+    <link rel="dns-prefetch" href="//images.pexels.com">
+  </head>
+  <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- No JavaScript fallback -->
+    <noscript>
+      <div style="text-align: center; padding: 2rem; background: #f3f4f6;">
+        <h1>JavaScript Required</h1>
+        <p>This application requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+      </div>
+    </noscript>
+    
+    <div id="root"></div>
+    <div id="main-content" tabindex="-1"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
